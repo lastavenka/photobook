@@ -1,200 +1,200 @@
 module.exports = function (grunt) {
 
-    grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
-        sass: {
-            dist: {
-                files: {
-                    "build/css/style.css": ["source/sass/style.scss"]
-                }
-            }
-        },
+  grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+    sass: {
+      dist: {
+        files: {
+          "build/css/style.css": ["source/sass/style.scss"]
+        }
+      }
+    },
 
-        autoprefixer: {
-            options: {
-                browsers: ["last 2 version", "ie 10"]
-            },
-            style: {
-                src: "build/css/style.css"
-            }
-        },
+    autoprefixer: {
+      options: {
+        browsers: ["last 2 version", "ie 10"]
+      },
+      style: {
+        src: "build/css/style.css"
+      }
+    },
 
-        cmq: {
-            style: {
-                files: {
-                    "build/css/style.css": ["build/css/style.css"]
-                }
-            }
-        },
+    cmq: {
+      style: {
+        files: {
+          "build/css/style.css": ["build/css/style.css"]
+        }
+      }
+    },
 
-        cssmin: {
-            style: {
-                options: {
-                    keepSpecialComments: 0,
-                    report: "gzip"
-                },
-                files: {
-                    "build/css/style.min.css": ["build/css/style.css"]
-                }
-            }
+    cssmin: {
+      style: {
+        options: {
+          keepSpecialComments: 0,
+          report: "gzip"
         },
+        files: {
+          "build/css/style.min.css": ["build/css/style.css"]
+        }
+      }
+    },
 
-        csscomb: {
-            style: {
-                expand: true,
-                src: ["source/sass/**/*.scss"]
-            }
+    csscomb: {
+      style: {
+        expand: true,
+        src: ["source/sass/**/*.scss"]
+      }
+    },
+
+    imagemin: {
+      images: {
+        options: {
+          optimizationLevel: 3,
         },
-
-        imagemin: {
-            images: {
-                options: {
-                    optimizationLevel: 3,
-                },
-                files: [{
-                    expand: true,
-                    src: ["build/img/**/*.{png,jpg,gif,svg}"]
+        files: [{
+          expand: true,
+          src: ["build/img/**/*.{png,jpg,gif,svg}"]
           }]
-            }
-        },
+      }
+    },
 
-        svgmin: {
-            options: {
-                plugins: [
-                    {
-                        removeViewBox: false
+    svgmin: {
+      options: {
+        plugins: [
+          {
+            removeViewBox: false
                 }, {
-                        removeUselessStrokeAndFill: false
+            removeUselessStrokeAndFill: false
                 }
             ]
-            },
-            files: {
-                expand: true,
-                src: ["build/img/**/*.svg"]
-            }
-        },
+      },
+      files: {
+        expand: true,
+        src: ["build/img/**/*.svg"]
+      }
+    },
 
-        copy: {
-            build: {
-                files: [{
-                    expand: true,
-                    cwd: "source",
-                    src: [
+    copy: {
+      build: {
+        files: [{
+          expand: true,
+          cwd: "source",
+          src: [
                   "img/*.*",
                   "types/*.*",
-                  "js/**",
                   "index.html",
                   "bower_components"
               ],
-                    dest: "build"
+          dest: "build"
           }]
-            },
+      },
 
-            buildHTML: {
-                files: [{
-                    expand: true,
-                    cwd: "source",
-                    src: [
+      buildHTML: {
+        files: [{
+          expand: true,
+          cwd: "source",
+          src: [
                   "index.html"
                 ],
-                    dest: "build"
+          dest: "build"
             }]
-            }
-        },
+      }
+    },
 
-        clean: {
-            build: ["build"]
-        },
+    clean: {
+      build: ["build"]
+    },
 
-        svgstore: {
-            options: {
-                includeTitleElement: false,
-                svg: {
-                    style: "display:none",
-                },
-                cleanup: [
+    svgstore: {
+      options: {
+        includeTitleElement: false,
+        svg: {
+          style: "display:none",
+        },
+        cleanup: [
                   "fill",
                 ],
-            },
-            default: {
-                files: {
-                    "build/img/sprite.svg": ["source/img/sprite/*.svg"],
-                },
-            },
+      },
+      default: {
+        files: {
+          "build/img/sprite.svg": ["source/img/sprite/*.svg"],
         },
+      },
+    },
 
-        sprite: {
-            all: {
-                src: "source/img/sprite/*.png",
-                retinaSrcFilter: "source/img/sprite/*@2x.png",
-                dest: "build/img/sprite.png",
-                retinaDest: "build/img/sprite@2x.png",
-                destCss: "source/sass/sprite.scss"
-            }
+    sprite: {
+      all: {
+        src: "source/img/sprite/*.png",
+        retinaSrcFilter: "source/img/sprite/*@2x.png",
+        dest: "build/img/sprite.png",
+        retinaDest: "build/img/sprite@2x.png",
+        destCss: "source/sass/sprite.scss"
+      }
+    },
+
+    uglify: {
+      start: {
+        files: {
+          "build/js/script.min.js": ["source/js/*.js"]
+        }
+      }
+    },
+
+    watch: {
+      options: {
+        livereload: true
+      },
+
+      scripts: {
+        files: ["source/js/*.js"],
+        tasks: ["uglify"],
+        options: {
+          spawn: false
         },
+      },
 
-        uglify: {
-            start: {
-                files: {
-                    "build/js/script.min.js": ["source/js/script.js"]
-                }
-            }
+      sass: {
+        files: ["source/sass/**/*.scss"],
+        tasks: ["sass", "cssmin"],
+        options: {
+          spawn: false
         },
+      },
 
-        watch: {
-            options: {
-                livereload: true
-            },
+      spriteSVG: {
+        files: ["source/img/sprite/*.svg"],
+        tasks: ["svgstore"],
+        options: {
+          spawn: false
+        },
+      },
 
-            scripts: {
-                files: ["source/js/script.js"],
-                tasks: ["uglify"],
-                options: {
-                    spawn: false
-                },
-            },
+      html: {
+        files: ["source/index.html"],
+        tasks: ["copy:buildHTML"],
+        options: {
+          spawn: false
+        },
+      },
 
-            sass: {
-                files: ["source/sass/**/*.scss"],
-                tasks: ["sass"],
-                options: {
-                    spawn: false
-                },
-            },
-
-            spriteSVG: {
-                files: ["source/img/sprite/*.svg"],
-                tasks: ["svgstore"],
-                options: {
-                    spawn: false
-                },
-            },
-
-            html: {
-                files: ["source/index.html"],
-                tasks: ["copy:buildHTML"],
-                options: {
-                    spawn: false
-                },
-            },
-
-            spritePNG: {
-                files: [
+      spritePNG: {
+        files: [
                       "source/img/sprite/*.png"
                     ],
-                tasks: ["sprite"],
-                options: {
-                    spawn: false
-                },
-            }
-        }
-    });
+        tasks: ["sprite"],
+        options: {
+          spawn: false
+        },
+      }
+    }
+  });
 
-    require('load-grunt-tasks')(grunt);
-    grunt.registerTask("build", [
+  require('load-grunt-tasks')(grunt);
+  grunt.registerTask("build", [
         "csscomb",
         "clean",
         "copy",
+        "uglify",
         "svgmin",
         "svgstore",
         "sprite",
@@ -202,9 +202,8 @@ module.exports = function (grunt) {
         "autoprefixer",
         "cmq",
         "cssmin",
-        "imagemin",
-        "uglify"
+        "imagemin"
     ]);
-    grunt.loadNpmTasks("grunt-contrib-watch");
-//    grunt.loadNpmTasks("grunt-csscomb");
+  grunt.loadNpmTasks("grunt-contrib-watch");
+  //    grunt.loadNpmTasks("grunt-csscomb");
 };
