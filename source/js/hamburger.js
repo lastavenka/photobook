@@ -2,11 +2,11 @@
 
 (function () {
   var hamburger = document.querySelector(".hamburger");
+  var mainNav = document.querySelector(".main-nav");
 
   hamburger.addEventListener("click", function (event) {
     event.preventDefault();
-    //    //        topHeader.classList.toggle("top-header--expand");
-    //    //        mainNav.classList.toggle("main-nav--open");
+    mainNav.classList.toggle("main-nav--close");
     hamburger.classList.toggle("active");
   });
 })();

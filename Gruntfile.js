@@ -70,7 +70,7 @@ module.exports = function (grunt) {
       },
       files: {
         expand: true,
-        src: ["build/img/**/*.svg"]
+        src: ["source/img/**/*.svg"]
       }
     },
 
@@ -117,20 +117,20 @@ module.exports = function (grunt) {
       },
       default: {
         files: {
-          "build/img/sprite.svg": ["source/img/sprite/*.svg"],
+          "build/img/sprite.svg": ["source/img/icons/*.svg"],
         },
       },
     },
 
-    sprite: {
-      all: {
-        src: "source/img/sprite/*.png",
-        retinaSrcFilter: "source/img/sprite/*@2x.png",
-        dest: "build/img/sprite.png",
-        retinaDest: "build/img/sprite@2x.png",
-        destCss: "source/sass/sprite.scss"
-      }
-    },
+    //    sprite: {
+    //      all: {
+    //        src: "source/img/icons/*.png",
+    //        retinaSrcFilter: "source/img/icons/*@2x.png",
+    //        dest: "build/img/sprite.png",
+    //        retinaDest: "build/img/sprite@2x.png",
+    //        destCss: "source/sass/sprite.scss"
+    //      }
+    //    },
 
     uglify: {
       start: {
@@ -175,17 +175,17 @@ module.exports = function (grunt) {
         options: {
           spawn: false
         },
-      },
-
-      spritePNG: {
-        files: [
-                      "source/img/sprite/*.png"
-                    ],
-        tasks: ["sprite"],
-        options: {
-          spawn: false
-        },
       }
+
+      //      spritePNG: {
+      //        files: [
+      //                      "source/img/icons/*.png"
+      //                    ],
+      //        tasks: ["sprite"],
+      //        options: {
+      //          spawn: false
+      //        },
+      //      }
     }
   });
 
@@ -194,15 +194,15 @@ module.exports = function (grunt) {
         "csscomb",
         "clean",
         "copy",
+        "imagemin",
         "uglify",
         "svgmin",
         "svgstore",
-        "sprite",
+//        "sprite",
         "sass",
         "autoprefixer",
         "cmq",
-        "cssmin",
-        "imagemin"
+        "cssmin"
     ]);
   grunt.loadNpmTasks("grunt-contrib-watch");
   //    grunt.loadNpmTasks("grunt-csscomb");

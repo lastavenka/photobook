@@ -10,6 +10,16 @@
 
 <body>
   <header class="page-header">
+    <nav class="main-nav main-nav--close">
+      <div class="main-nav__wrap">
+        <ul class="main-nav__list">
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Help</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+    </nav>
     <div class="page-header__inner">
       <div class="page-header__group">
         <a class="hamburger" href="#" title="Menu">
@@ -17,21 +27,13 @@
           <span class="hamburger__line hamburger__line--2"></span>
           <span class="hamburger__line hamburger__line--3"></span>
         </a>
-        <nav class="main-nav">
-          <div class="main-nav__wrap">
-            <ul class="main-nav__list">
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Help</a></li>
-              <li><a href="#">Press</a></li>
-            </ul>
-          </div>
-        </nav>
         <a href="#" class="page-header__logo">Photobook</a>
       </div>
       <div class="page-header__group">
-        <a href="tel:+112358132134" class="page-header__phone">+11 235 813 2134</a>
-        <a href="#" class="page-header__login">Log in</a>
+        <div class="page-header__phone">
+          <a href="tel:+112358132134" class="page-header__phone-number"><svg width="33px" height="29px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#page-header__phone"></use></svg>+11&#160;235&#160;813&#160;2134</a>
+        </div>
+        <a href="#" class="page-header__login"><svg width="33px" height="29px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#page-header__login"></use></svg>Log in</a>
       </div>
     </div>
   </header>
@@ -44,7 +46,7 @@
   </section>
   <section class="steps">
     <div class="steps__inner">
-      <h2 class="steps__title visually-hidden">Steps</h2>
+      <h2 class="steps__title">Steps</h2>
       <ul class="steps__list">
         <li class="step"><i class="step__icon step__icon--download"></i><span class="step__title">Download  photos</span></li>
         <li class="step"><i class="step__icon step__icon--design"></i><span class="step__title">Design your photobook</span></li>
@@ -152,7 +154,7 @@
   </section>
   <section class="terms">
     <div class="terms__inner">
-      <h2 class="terms__title visually-hidden">Terms</h2>
+      <h2 class="terms__title">Terms</h2>
       <ul class="terms__list">
         <li class="terms-item">
           <h3 class="terms-item__header">Terms</h3>

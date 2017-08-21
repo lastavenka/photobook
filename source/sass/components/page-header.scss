@@ -1,28 +1,87 @@
 .page-header {
+  position: relative;
+  min-width: 420px;
   &__inner {
     margin: auto;
-    padding-left: 3%;
-    padding-right: 3%;
     padding-top: 21px;
     padding-bottom: 21px;
+    padding-right: 3%;
+    padding-left: 3%;
     max-width: 1200px;
     display: flex;
     justify-content: space-between;
   }
   &__group {
     display: flex;
-    width: 25%;
+    min-width: 25%;
+    align-items: center;
+    justify-content: space-between;
+    @media(min-width: $min-width-1) and (max-width: $max-width-1) {
+      width: 30%;
+    }
+    @media(max-width: $min-width-1) {
+      width: 50%;
+      justify-content: flex-end;
+    }
   }
   &__logo {
     display: block;
     font-size: 0;
-    width: 54%;
+    min-width: 162px;
     height: 19px;
     background-image: url("../img/header__logo.png");
     background-size: contain;
     background-repeat: no-repeat;
     @media (-webkit-min-device-pixel-ratio: 2) {
       background-image: url("../img/header__logo@2x.png");
+    }
+  }
+  &__phone {
+    width: 70%;
+    margin-right: 23%;
+    text-align: center;
+    background-color: $yellow;
+    padding-top: 7px;
+    padding-bottom: 9px;
+    border-radius: 10px;
+    cursor: pointer;
+    &:hover {
+      .page-header__phone-number {
+        border-bottom: none;
+      }
+    }
+    @media(max-width: $min-width-1) {
+      width: 50px;
+      height: 29px;
+      margin-right: 3%;
+    }
+    svg {
+      display: none;
+      margin: auto;
+      @media(max-width: $min-width-1) {
+        display: block;
+      }
+    }
+  }
+  &__phone-number {
+    font-family: $font-family-base;
+    font-size: $font-size-base - .2;
+    line-height: $line-height-base - .4;
+    color: $gray-21;
+    border-bottom: 1px dashed $gray-21;
+    font-weight: 300;
+    @media(max-width: $min-width-1) {
+      font-size: 0;
+    }
+  }
+  &__login {
+    font-size: 0;
+    display: block;
+    height: 29px;
+    &:active {
+      svg {
+        fill: $yellow;
+      }
     }
   }
 }
@@ -75,5 +134,47 @@
 }
 
 .main-nav {
-  display: none;
+  position: absolute;
+  top: 100%;
+  width: 30%;
+  background-color: $white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: all .4s;
+  @media(min-width: $min-width-1) and (max-width: $max-width-1) {
+    width: 50%;
+  }
+  @media(max-width: $min-width-1) {
+    width: 100%;
+  }
+  &--close {
+    @include visually-hidden;
+  }
+  &__wrap {
+    margin: auto;
+  }
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      margin-left: 0;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-left: 5%;
+      padding-right: 5%;
+      text-align: center;
+    }
+    a {
+      text-align: center;
+      font-family: $font-family-base;
+      font-size: $font-size-base + .6;
+      line-height: $line-height-base + 1;
+      color: $black;
+      font-weight: 300;
+      &:hover {
+        color: $yellow;
+      }
+    }
+  }
 }

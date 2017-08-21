@@ -1,8 +1,4 @@
-.wrapper {
-  padding: 0 6%;
-}
-
-.list-to-flex {
+@mixin list-to-flex {
   display: flex;
   justify-content: space-between;
   list-style: none;
@@ -10,25 +6,26 @@
   padding: 0;
 }
 
-.clearfix {
+@mixin clearfix {
   display: table;
   clear: both;
   content: "";
 }
 
-.hidden-text {
+@mixin hidden-text {
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
 }
 
-.visually-hidden {
-  position: absolute !important;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0 !important;
-  border: 0 !important;
-  height: 1px !important;
-  width: 1px !important;
+// Content for screen readers only
+@mixin visually-hidden {
+  position: absolute;
   overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
 }

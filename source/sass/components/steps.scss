@@ -1,0 +1,100 @@
+.steps {
+  min-width: 420px;
+  &__inner {
+    margin: auto;
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-top: 55px;
+    padding-bottom: 90px;
+    max-width: 1079px;
+    @media (max-width: $min-width-1) {
+      padding-bottom: 70px;
+    }
+  }
+  &__title {
+    @include visually-hidden;
+  }
+  &__list {
+    position: relative;
+    @media (max-width: $min-width-1) {
+      flex-direction: column;
+      margin: auto;
+    }
+    @include list-to-flex;
+    &::before {
+      position: absolute;
+      display: block;
+      left: 140px;
+      top: 65px;
+      content: "";
+      width: 80%;
+      height: 0;
+      border-top: 5px dashed $yellow;
+      @media(min-width: $min-width-1) and (max-width: $max-width-1) {
+        width: 75%;
+      }
+      @media (max-width: $min-width-1) {
+        display: none;
+      }
+    }
+  }
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 140px;
+  text-align: center;
+  @media (max-width: $min-width-1) {
+    max-width: 250px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &__icon {
+    display: block;
+    width: 130px;
+    height: 130px;
+    margin-bottom: 25px;
+    border-radius: 50%;
+    border: 5px solid $yellow;
+    background-color: $white;
+    z-index: 2;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../img/step--download.png);
+    background-size: 57px 48px;
+    @media (-webkit-min-device-pixel-ratio: 2) {
+      background-image: url(../img/step--download@2x.png);
+    }
+    &--design {
+      background-image: url(../img/step--design.png);
+      background-size: 54px 52px;
+      @media (-webkit-min-device-pixel-ratio: 2) {
+        background-image: url(../img/step--design@2x.png);
+      }
+    }
+    &--pay {
+      background-image: url(../img/step--pay.png);
+      background-size: 62px 55px;
+      @media (-webkit-min-device-pixel-ratio: 2) {
+        background-image: url(../img/step--pay@2x.png);
+      }
+    }
+    &--get {
+      background-image: url(../img/step--get.png);
+      background-size: 52px 57px;
+      @media (-webkit-min-device-pixel-ratio: 2) {
+        background-image: url(../img/step--get@2x.png);
+      }
+    }
+  }
+  &__title {
+    font-family: $font-family-base;
+    font-size: $font-size-base + .6;
+    line-height: 1.2;
+    color: $black;
+    font-weight: 300;
+  }
+}
