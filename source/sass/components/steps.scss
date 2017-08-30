@@ -2,8 +2,8 @@
   min-width: 420px;
   &__inner {
     margin: auto;
-    padding-left: 6%;
-    padding-right: 6%;
+    padding-left: 3%;
+    padding-right: 3%;
     padding-top: 55px;
     padding-bottom: 90px;
     max-width: 1079px;
@@ -15,12 +15,13 @@
     @include visually-hidden;
   }
   &__list {
+    @include list-to-flex;
     position: relative;
+    justify-content: space-around;
     @media (max-width: $min-width-1) {
       flex-direction: column;
       margin: auto;
     }
-    @include list-to-flex;
     &::before {
       position: absolute;
       display: block;

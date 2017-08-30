@@ -1,0 +1,104 @@
+.advantage {
+  min-width: 420px;
+  background-color: $biege;
+  &__inner {
+    margin: auto;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 55px;
+    padding-bottom: 75px;
+    max-width: 1079px;
+  }
+  &__title {
+    text-align: center;
+    font-family: $font-family-base;
+    font-size: $font-size-base + 4.2;
+    line-height: 1.2;
+    color: $black;
+    font-weight: 100;
+    font-variant: small-caps;
+    letter-spacing: 6px;
+    margin-top: 0;
+    margin-bottom: 60px;
+  }
+  &__list {
+    @include list-to-flex;
+    @media(min-width: $min-width-1) and (max-width: $max-width-1) {
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    @media (max-width: $min-width-1) {
+      width: 60%;
+      flex-direction: column;
+      margin: auto;
+      align-items: center;
+    }
+  }
+  &__btn {
+    display: block;
+    width: 35%;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 90px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.2;
+    font-family: $font-family-base;
+    font-size: $font-size-base + .8;
+    color: $white;
+    font-weight: 200;
+    border-radius: 10px;
+    border: 1px solid $red;
+    background-color: $red;
+    &:active {
+      background-color: transparent;
+      color: $red;
+    }
+    @media(max-width: $min-width-1) {
+      width: 70%;
+    }
+  }
+}
+
+.advantage-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 267px;
+  text-align: center;
+  @media(min-width: $min-width-1) and (max-width: $max-width-1) {
+    margin-right: 3%;
+  }
+  @media (max-width: $max-width-1) {
+    margin-bottom: 35px;
+  }
+  &:last-child {
+    @media(min-width: $min-width-1) and (max-width: $max-width-1) {
+      margin-right: 0;
+    }
+  }
+  &__img {
+    width: 267px;
+    height: 267px;
+    margin-bottom: 20px;
+  }
+  &__title {
+    margin: 0;
+    margin-bottom: 20px;
+    font-family: $font-family-base;
+    font-size: $font-size-base + .6;
+    line-height: 1.2;
+    color: $black;
+    font-weight: 300;
+  }
+  &__text {
+    margin: 0;
+    font-family: $font-family-base;
+    font-size: $font-size-base - .2;
+    line-height: 1.2;
+    color: $black;
+    font-weight: 300;
+  }
+}

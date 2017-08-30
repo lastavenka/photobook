@@ -49,13 +49,13 @@
     line-height: 1.2;
     font-family: $font-family-base;
     font-size: $font-size-base + .8;
-    line-height: $line-height-base + 1;
     color: $black;
     font-weight: 200;
     border: 1px solid $black;
     border-radius: 10px;
     &:active {
       border-color: $yellow;
+      color: $yellow;
     }
     @media(max-width: $min-width-1) {
       width: 70%;

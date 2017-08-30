@@ -122,15 +122,15 @@ module.exports = function (grunt) {
       },
     },
 
-    //    sprite: {
-    //      all: {
-    //        src: "source/img/icons/*.png",
-    //        retinaSrcFilter: "source/img/icons/*@2x.png",
-    //        dest: "build/img/sprite.png",
-    //        retinaDest: "build/img/sprite@2x.png",
-    //        destCss: "source/sass/sprite.scss"
-    //      }
-    //    },
+        sprite: {
+          all: {
+            src: "source/img/icons/*.png",
+            retinaSrcFilter: "source/img/icons/*@2x.png",
+            dest: "build/img/sprite.png",
+            retinaDest: "build/img/sprite@2x.png",
+            destCss: "source/sass/sprite.scss"
+          }
+        },
 
     uglify: {
       start: {
@@ -175,17 +175,17 @@ module.exports = function (grunt) {
         options: {
           spawn: false
         },
-      }
+      },
 
-      //      spritePNG: {
-      //        files: [
-      //                      "source/img/icons/*.png"
-      //                    ],
-      //        tasks: ["sprite"],
-      //        options: {
-      //          spawn: false
-      //        },
-      //      }
+            spritePNG: {
+              files: [
+                            "source/img/icons/*.png"
+                          ],
+              tasks: ["sprite"],
+              options: {
+                spawn: false
+              },
+            }
     }
   });
 
@@ -198,8 +198,9 @@ module.exports = function (grunt) {
         "uglify",
         "svgmin",
         "svgstore",
-//        "sprite",
+        "sprite",
         "sass",
+        "cmq",
         "autoprefixer",
         "cmq",
         "cssmin"
