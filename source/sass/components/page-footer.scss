@@ -61,6 +61,9 @@
     font-size: $font-size-base;
     color: $black;
     font-weight: 400;
+    &:active {
+      font-weight: 500;
+    }
     &--tracked {
       font-variant: small-caps;
       letter-spacing: 2px;

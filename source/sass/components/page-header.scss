@@ -50,6 +50,9 @@
         border-bottom: none;
       }
     }
+    @media(min-width: $min-width-1) and (max-width: $max-width-1) {
+      margin-right: 10%;
+    }
     @media(max-width: $min-width-1) {
       display: none;
     }
@@ -68,9 +71,6 @@
     color: $gray-21;
     border-bottom: 1px dashed $gray-21;
     font-weight: 300;
-    @media(max-width: $min-width-1) {
-      font-size: 0;
-    }
   }
   &__login {
     font-size: 0;

@@ -57,6 +57,9 @@
       border-color: $yellow;
       color: $yellow;
     }
+    @media(min-width: $min-width-1) and (max-width: $max-width-1) {
+      width: 45%;
+    }
     @media(max-width: $min-width-1) {
       width: 70%;
     }

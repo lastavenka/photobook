@@ -15,6 +15,9 @@
     @media (-webkit-min-device-pixel-ratio: 2) {
       background-image: url("../img/bg-testimonials@2x.png");
     }
+    @media(max-width: $max-width-1) {
+      background-image: none;
+    }
   }
   &__title {
     font-family: $font-family-base;
@@ -26,5 +29,101 @@
     letter-spacing: 6px;
     margin-top: 0;
     margin-bottom: 53px;
+  }
+  &__wrap {
+    width: 50%;
+    overflow: hidden;
+    @media(max-width: $max-width-1) {
+      width: 70%;
+      margin: auto;
+    }
+  }
+  &__list {
+    @include list-to-flex;
+    width: 300%;
+    transition: all .4s;
+  }
+  &__group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+  }
+  &__nav {
+    font-family: $font-family-base;
+    font-size: $font-size-base - .2;
+    line-height: 1.2;
+    color: $black;
+    font-weight: 200;
+    &--hidden {
+      visibility: hidden;
+    }
+  }
+  &__btn {
+    display: block;
+    width: 70%;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.2;
+    font-family: $font-family-base;
+    font-size: $font-size-base + .8;
+    color: $black;
+    font-weight: 200;
+    border: 1px solid $black;
+    border-radius: 10px;
+    margin-top: 110px;
+    &::before {
+      @include clearfix;
+    }
+    &:active {
+      border-color: $yellow;
+      color: $yellow;
+    }
+    @media(max-width: $min-width-1) {
+      width: 70%;
+    }
+  }
+}
+
+.testimonial {
+  width: 100%;
+  &__group {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+  }
+  &__img {
+    width: 29%;
+    margin-right: 30px;
+  }
+  &__name {
+    font-family: $font-family-base;
+    font-size: $font-size-base + 1.2;
+    line-height: 1.2;
+    color: $black;
+    font-weight: 300;
+    font-variant: small-caps;
+    letter-spacing: 2px;
+    font-style: normal;
+  }
+  &__position {
+    display: block;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    line-height: 1.2;
+    color: $black;
+    font-weight: 300;
+  }
+  &__text {
+    margin: 0;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    line-height: 1.2;
+    color: $black;
+    font-weight: 300;
+    margin-bottom: 10px;
   }
 }

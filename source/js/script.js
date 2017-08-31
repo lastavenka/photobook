@@ -2,10 +2,10 @@
   'use strict';
 
   var file = 'img/sprite.svg',
-    revision = 4;
+        revision = 4;
 
-  if (!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect)
-    return true;
+    if (!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect)
+      return true;
 
   var isLocalStorage = 'localStorage' in window && window['localStorage'] !== null,
     request,
