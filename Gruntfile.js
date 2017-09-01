@@ -104,6 +104,17 @@ module.exports = function (grunt) {
     clean: {
       build: ["build"]
     },
+    
+    cmq: {
+      options: {
+        log: false
+      },
+      target: {
+        files: {
+          "build/css/style.css": ["build/css/style.css"]
+        }
+      }
+    },
 
     svgstore: {
       options: {
@@ -122,15 +133,15 @@ module.exports = function (grunt) {
       },
     },
 
-        sprite: {
-          all: {
-            src: "source/img/icons/*.png",
-            retinaSrcFilter: "source/img/icons/*@2x.png",
-            dest: "build/img/sprite.png",
-            retinaDest: "build/img/sprite@2x.png",
-            destCss: "source/sass/sprite.scss"
-          }
-        },
+    sprite: {
+      all: {
+        src: "source/img/icons/*.png",
+        retinaSrcFilter: "source/img/icons/*@2x.png",
+        dest: "build/img/sprite.png",
+        retinaDest: "build/img/sprite@2x.png",
+        destCss: "source/sass/sprite.scss"
+      }
+    },
 
     uglify: {
       start: {
@@ -177,15 +188,15 @@ module.exports = function (grunt) {
         },
       },
 
-            spritePNG: {
-              files: [
+      spritePNG: {
+        files: [
                             "source/img/icons/*.png"
                           ],
-              tasks: ["sprite"],
-              options: {
-                spawn: false
-              },
-            }
+        tasks: ["sprite"],
+        options: {
+          spawn: false
+        },
+      }
     }
   });
 
