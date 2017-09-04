@@ -29,6 +29,9 @@
     letter-spacing: 6px;
     margin-top: 0;
     margin-bottom: 53px;
+    @media(max-width: $min-width-1) {
+      text-align: center;
+    }
   }
   &__wrap {
     width: 50%;
@@ -82,8 +85,14 @@
       border-color: $yellow;
       color: $yellow;
     }
+    @media(min-width: $min-width-1) and (max-width: $max-width-1) {
+      width: 60%;
+      font-size: $font-size-base + .6;
+    }
     @media(max-width: $min-width-1) {
-      width: 70%;
+      margin-top: 70px;
+      width: 90%;
+      font-size: $font-size-base + .4;
     }
   }
 }

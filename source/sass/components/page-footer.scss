@@ -61,8 +61,8 @@
     font-size: $font-size-base;
     color: $black;
     font-weight: 400;
-    &:active {
-      font-weight: 500;
+    &:hover {
+      color: $khaki;
     }
     &--tracked {
       font-variant: small-caps;
@@ -95,6 +95,11 @@
   }
   &__item {
     font-size: 0;
+  }
+  svg {
+    &:hover {
+      fill: $khaki;
+    }
   }
 }
 

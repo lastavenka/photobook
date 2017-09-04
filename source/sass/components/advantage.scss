@@ -56,8 +56,13 @@
       background-color: transparent;
       color: $red;
     }
+    @media(min-width: $min-width-1) and (max-width: $max-width-1) {
+      width: 45%;
+      font-size: $font-size-base + .6;
+    }
     @media(max-width: $min-width-1) {
       width: 70%;
+      font-size: $font-size-base + .4;
     }
   }
 }
@@ -72,7 +77,7 @@
     margin-right: 3%;
   }
   @media (max-width: $max-width-1) {
-    margin-bottom: 35px;
+    margin-bottom: 45px;
   }
   &:last-child {
     @media(min-width: $min-width-1) and (max-width: $max-width-1) {

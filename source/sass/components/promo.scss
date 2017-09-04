@@ -19,7 +19,7 @@
     text-align: center;
     font-family: $font-family-base;
     font-size: $font-size-base + 4.2;
-    line-height: 1.2;
+    line-height: .9;
     color: $black;
     font-weight: 100;
     font-variant: small-caps;
@@ -59,9 +59,11 @@
     }
     @media(min-width: $min-width-1) and (max-width: $max-width-1) {
       width: 45%;
+      font-size: $font-size-base + .6;
     }
     @media(max-width: $min-width-1) {
       width: 70%;
+      font-size: $font-size-base + .4;
     }
   }
 }

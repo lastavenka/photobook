@@ -69,6 +69,9 @@
     @media (-webkit-min-device-pixel-ratio: 2) {
       background-image: url(../img/step--download@2x.png);
     }
+    @media (max-width: $min-width-1) {
+      margin-bottom: 10px;
+    }
     &--design {
       background-image: url(../img/step--design.png);
       background-size: 54px 52px;
