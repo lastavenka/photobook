@@ -375,26 +375,31 @@ a {
   src: url("../types/pfagorasanspro-thin-webfont.woff2") format("woff2"), url("../types/pfagorasanspro-thin-webfont.woff") format("woff");
   font-weight: 200;
   font-style: normal; }
+
 @font-face {
   font-family: "PFAgoraSansPro";
   src: url("../types/pfagorasanspro-xthin-webfont.woff2") format("woff2"), url("../types/pfagorasanspro-xthin-webfont.woff") format("woff");
   font-weight: 100;
   font-style: normal; }
+
 @font-face {
   font-family: "PFAgoraSansPro";
   src: url("../types/pfagorasanspro-light-webfont.woff2") format("woff2"), url("../types/pfagorasanspro-light-webfont.woff") format("woff");
   font-weight: 300;
   font-style: normal; }
+
 @font-face {
   font-family: "PFAgoraSansPro";
   src: url("../types/pfagorasanspro-reg-webfont.woff2") format("woff2"), url("../types/pfagorasanspro-reg-webfont.woff") format("woff");
   font-weight: 400;
   font-style: normal; }
+
 @font-face {
   font-family: "PFAgoraSansPro";
   src: url("../types/pfagorasanspro-bold-webfont.woff2") format("woff2"), url("../types/pfagorasanspro-bold-webfont.woff") format("woff");
   font-weight: 600;
   font-style: normal; }
+
 .page-footer {
   min-width: 420px;
   background-color: #ffd200; }
@@ -792,6 +797,7 @@ a {
     letter-spacing: 2px;
     font-style: normal; }
   .price__value {
+    display: block;
     text-align: center;
     font-family: PFAgoraSansPro, Arial, sans-serif;
     font-size: 6rem;
@@ -879,9 +885,6 @@ a {
         font-size: 2.2rem; } }
 
 .advantage-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   max-width: 267px;
   text-align: center; }
   @media (min-width: 700px) and (max-width: 1170px) {
@@ -906,6 +909,7 @@ a {
     color: #000;
     font-weight: 300; }
   .advantage-item__text {
+    width: 100%;
     margin: 0;
     font-family: PFAgoraSansPro, Arial, sans-serif;
     font-size: 1.6rem;
@@ -1326,5 +1330,3 @@ a {
       .promo__btn {
         width: 70%;
         font-size: 2.2rem; } }
-
-/*# sourceMappingURL=style.css.map */

@@ -7,7 +7,8 @@
     padding-top: 92px;
     padding-bottom: 120px;
     max-width: 1079px;
-    @media (max-width: $min-width-1) {}
+    @media (max-width: $min-width-1) {
+    }
   }
   &__title {
     @include visually-hidden;

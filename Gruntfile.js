@@ -166,10 +166,7 @@ module.exports = function (grunt) {
 
       sass: {
         files: ["source/sass/**/*.scss"],
-        tasks: ["sass", "cssmin"],
-        options: {
-          spawn: false
-        },
+        tasks: ["sass", "cssmin"]
       },
 
       spriteSVG: {

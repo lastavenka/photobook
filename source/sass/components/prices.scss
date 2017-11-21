@@ -126,6 +126,7 @@
     font-style: normal;
   }
   &__value {
+    display: block;
     text-align: center;
     font-family: $font-family-base;
     font-size: $font-size-base + 4.2;
